@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message EchoMesssage{
+  message Req {
+    bytes data = 1;
+  }
+  message Resp {
+    bytes data = 1;
+  }
+}
+
+service Echo {
+  rpc echo(EchoMesssage.Req) returns (EchoMesssage.Resp) {}
+}
