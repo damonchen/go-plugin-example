@@ -1,0 +1,16 @@
+syntax="proto3";
+
+package proto;
+
+message GetRequest{
+  string key=1;
+}
+
+message GetResponse {
+  bytes value = 1;
+}
+
+
+service Echo {
+  rpc echo(GetRequest) returns (GetResponse);
+}
